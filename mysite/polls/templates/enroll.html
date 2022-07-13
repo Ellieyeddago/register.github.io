@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll here</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap.bundle.min.js">
+    <style>
+      body{
+        background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.86)10% 45%,rgba(255, 255, 255, 0.925) 80% 50%);
+        padding: 18px;
+        
+      } 
+      .form-input{
+        background-color: rgba(5, 57, 7, 0.3);
+        color: aliceblue;
+        padding: 5px;
+      }
+      .button{
+        display: inline;
+     
+
+      }
+      p{
+        color: aliceblue;
+      }
+      
+    </style>
+</head>
+<body>
+  <form class="container  " action="addrecord/" method="post">
+    
+        <div class="title text-center mt-3 text-white">
+            <h1>"FE Preparation Course for October"</h1>
+            
+        </div>
+        <br>
+        <p>*Please enroll here if you want to join this course. </p>
+        {% csrf_token %}
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First Name:" name="first">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last Name:" name="last">
+              </div>
+            </div>
+          <br>
+          <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Father Name:" name="father">
+              </div>
+              <div class="col">
+                 <input type="date" class="form-control"  name="dob">
+              </div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="NRC.No:" name="nrc">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Contact.No:" name="contact">
+              </div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Enter email:" name="email">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Permanant Address:" name="address">
+              </div>
+          </div>
+          <br>
+          <input type="text" class="form-control" placeholder="Education Background:" name="edu">
+          <br>
+          <div class="form-input">
+            <h3>Payment method:</h3>
+            <p>*KBZ Pay  - 09876543312(Go Go)</p>
+            <p>*WavePay  - 09675432123(Kyaw Gyi)</p>
+            <p>*KBZ - 20987654321234566</p>
+            <P>*AYA - 34567890987654212</P>
+            <P>-Please screenshoot your payment and upload down here!></P>
+            <lable for="">*Photo</lable>
+            <input type="file">
+        </div>
+        <br>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="write comments" id="floatingTextarea2" style="height: 100px"></textarea>
+          <label for="floatingTextarea2">*Leave a comment here!</label>
+        </div>
+      <br>
+      <div>
+        {% for message in messages %} 
+        <p style="color: red;">{{message}}</p>
+        {% endfor %}
+      </div>
+    <br>
+    <div class="button">
+      <input type="submit" value="Submit" >
+    </div>
+  </form>
+</body>
+</html>

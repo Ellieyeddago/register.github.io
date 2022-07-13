@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKT Registerations Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap.bundle.min.js">
+    <style>
+      .container-fluid{
+        background-color: rgb(180, 105, 14);
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid p-4 text-black text-center">
+    <img class="rounded-circle" src="https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/272274356_146791817732289_4949843533722317882_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=9-lYJOX8lH8AX_-Q-Mo&tn=yKyhcj54otPBhpma&_nc_pt=1&_nc_ht=scontent-lax3-1.xx&oh=00_AT-FG1cGujVP1NqgN1_DTEETctmVctKQtWLGnu5RIVk77w&oe=62D44488" width="150px" alt="">
+    <br>
+    <br>
+    <h1 >Welcome Master!</h1>
+      <br>
+    <h3 >This is FE Student Registerations List.</h3>
+  </div>
+    
+  
+    <div class="container mt-3">
+    
+          <div class="table-responsive">    
+            <table class="table ">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Father Name</th>
+                  <th>Date of Birth</th>
+                  <th>NRC No</th>
+                  <th>Contact No</th>
+                  <th>Email Address</th>
+                  <th>Parmanent Address</th>
+                  <th>Education Background</th>
+                  <th>RemoveFinal Django</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                      {% for x in mypolls %}
+                  <tr>
+                      <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+                      <td>{{ x.firstname }}</td>
+                      <td>{{ x.lastname }}</td>
+                      <td>{{ x.fathername }}</td>
+                      <td>{{ x.dateofbirth }}</td>
+                      <td>{{ x.nrcno }}</td>
+                      <td>{{ x.contactno }}</td>
+                      <td>{{ x.emailAddress }}</td>
+                      <td>{{ x.pAddress }}</td>
+                      <td>{{ x.edu }}</td>
+                      <td><a href="delete/{{ x.id }}">delete</a></td>
+                      {% endfor %}
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        <br>
+        
+      </div>
+</body>
+</html>
